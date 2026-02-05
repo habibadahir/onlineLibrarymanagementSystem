@@ -1,44 +1,47 @@
+#include <iostream>
+#include "Book.h"
 #include "User.h"
+#include "Library.h"
 
-User::User(int id, string name) {
-    this->id = id;
-    this->name = name;
+using namespace std;
 
-}
+int main() {
+    Library library;
 
-int User::getId() {
-    return id;
-}
-string User::getName() {
-    return name; 
-}
-vector<string> User::getBorrowedBooks() { 
-    return borrowedBooks; 
-}
-void User::setName(string n) {
-    name = n;
-}
+    // --- Add books ---
+    Book b1("C++ Guide", "Smith", 2023, 20, 20);
+    library.addBook(b1);
 
-bool User::hasBorrowed(string bookTitle) {
-    for (int i = 0; i < borrowedBooks.size(); i++) {
-        if (borrowedBooks[i] == bookTitle) {
-            return true;
-        }
+    // --- Add users ---
+    User u1(101, "Mey");
+    library.addUser(u1);
+
+    // --- Borrowbook ---
+    library.borrowBook(101, "C++ Guide"); 
+
+    // ---borrowed books ---
+    cout << "Mey borrowed: ";
+    for (string book : library.getUserIndex(101) != -1 ? library.users[library.getUserIndex(101)].getBorrowedBooks() : vector<string>{}) {
+        cout << book << ", ";
     }
-    return false;
-}
+    cout << endl;
 
-void User::borrowBook(string bookTitle) {
-    if (!hasBorrowed(bookTitle)) {
-        borrowedBooks.push_back(bookTitle);
-    }
-}
+    // --- Return books ---
+    library.returnBook(101, "C++ Guide");
 
-void User::returnBook(string bookTitle) {
-    for (int i = 0; i < borrowedBooks.size(); i++) {
-        if (borrowedBooks[i] == bookTitle) {
-            borrowedBooks.erase(borrowedBooks.begin() + i);
-            break;
-        }
+    // -----borrowed books after the return ---
+    cout << "After return:" << endl;
+    cout << "Mey borrowed: ";
+    for (string book : library.getUserIndex(101) != -1 ? library.users[library.getUserIndex(101)].getBorrowedBooks() : vector<string>{}) {
+        cout << book << ", ";
     }
+    cout << endl;
+  
+
+    // --- Search book by title ---
+    int idx = library.searchBookByTitle("C++ Guide");
+    if (idx != -1) cout << "Found book: " << library.books[idx].getTitle() << endl;
+    else cout << "Book not found" << endl;
+
+    return 0;
 }
