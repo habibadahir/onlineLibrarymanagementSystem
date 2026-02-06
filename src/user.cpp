@@ -13,7 +13,7 @@ string User::getName() {
     return name; 
 }
 vector<string> User::getBorrowedBooks() { 
-    return borrowedBooks; 
+    return borrowedBooks;
 }
 void User::setName(string n) {
     name = n;
