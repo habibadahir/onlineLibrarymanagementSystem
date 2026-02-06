@@ -22,7 +22,7 @@ int main() {
 
     // ---borrowed books ---
     cout << "Zam borrowed: ";
-    for (string book : library.getUserIndex(101) != -1 ? library.users[library.getUserIndex(101)].getBorrowedBooks() : vector<string>{}) {
+    for (string book : library.getUserIndex(101) != -1 ? library.getUsers(library.getUserIndex(101)).getBorrowedBooks() : vector<string>{}) {
         cout << book << ", ";
     }
     cout << endl;
@@ -33,7 +33,7 @@ int main() {
     // -----borrowed books after the return ---
     cout << "After return:" << endl;
     cout << "Zam borrowed: ";
-    for (string book : library.getUserIndex(101) != -1 ? library.users[library.getUserIndex(101)].getBorrowedBooks() : vector<string>{}) {
+    for (string book : library.getUserIndex(101) != -1 ? library.getUsers(library.getUserIndex(101)).getBorrowedBooks() : vector<string>{}) {
         cout << book << ", ";
     }
     cout << endl;
@@ -41,7 +41,7 @@ int main() {
 
     // --- Search book by title ---
     int idx = library.searchBookByTitle("C++ Guide");
-    if (idx != -1) cout << "Found book: " << library.books[idx].getTitle() << endl;
+    if (idx != -1) cout << "Found book: " << library.getBooks(idx).getTitle() << endl;
     else cout << "Book not found" << endl;
 
     return 0;
