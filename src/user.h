@@ -1,23 +1,23 @@
-#include <string>
+#include <vector>
 using namespace std;
 
 class User {
 private:
     int id;                      
     string name;                   
-    vector<string> borrowBooks; 
+    vector<string> borrowedBooks; 
 
 public:
     User(int id, string name);
 
     int getId();
     string getName();
-    vector<string> getborrowBooks();
+    vector<string> getborrowedBooks();
 
 
     void setName(string n);
-  
-    bool hasBorrowed(const string &isbn);      
-    void borrowBook(const string &isbn);       
-    void returnBook(const string &isbn);
+
+bool hasBorrowed(string bookTitle);
+void borrowBook(string bookTitle);
+void returnBook(string bookTitle);
 };
