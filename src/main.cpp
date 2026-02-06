@@ -9,7 +9,7 @@ int main() {
     Library library;
 
     // --- Add books ---
-    Book b1("C++ Guide", "Musa", 20223, 20, 20);
+    Book b1("C++ Guide", "Musa", 2023, 20, 20);
     library.addBook(b1);
 
     // --- Add users ---
