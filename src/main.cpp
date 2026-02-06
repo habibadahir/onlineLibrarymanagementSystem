@@ -9,18 +9,18 @@ int main() {
     Library library;
 
     // --- Add books ---
-    Book b1("C++ Guide", "Smith", 2023, 20, 20);
+    Book b1("C++ Guide", "Musa", 20223, 20, 20);
     library.addBook(b1);
 
     // --- Add users ---
-    User u1(101, "Mey");
+    User u1(101, "Zam");
     library.addUser(u1);
 
     // --- Borrowbook ---
     library.borrowBook(101, "C++ Guide"); 
 
     // ---borrowed books ---
-    cout << "Mey borrowed: ";
+    cout << "Zam borrowed: ";
     for (string book : library.getUserIndex(101) != -1 ? library.users[library.getUserIndex(101)].getBorrowedBooks() : vector<string>{}) {
         cout << book << ", ";
     }
@@ -31,7 +31,7 @@ int main() {
 
     // -----borrowed books after the return ---
     cout << "After return:" << endl;
-    cout << "Mey borrowed: ";
+    cout << "Zam borrowed: ";
     for (string book : library.getUserIndex(101) != -1 ? library.users[library.getUserIndex(101)].getBorrowedBooks() : vector<string>{}) {
         cout << book << ", ";
     }
