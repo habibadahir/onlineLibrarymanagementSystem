@@ -88,12 +88,12 @@ int main() {
 
     /* --- Positive Test: Search book exists ---*/
     int idx = library.searchBookByTitle("OOP");
-    if (idx != -1) cout << "Found book: " << library.getBook[idx].getTitle() << endl;
+    if (idx != -1) cout << "Found book: " << library.getBook(idx).getTitle() << endl;
     else cout << "Book not found" << endl;
 
     // --- Negative Test
     idx = library.searchBookByTitle("C Guide");
-    if (idx != -1) cout << "Found book: " << library.getBook[idx].getTitle() << endl;
+    if (idx != -1) cout << "Found book: " << library.getBook(idx).getTitle() << endl;
     else cout << "Book not found" << endl;
 
     return 0;
