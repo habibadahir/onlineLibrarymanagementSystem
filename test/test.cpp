@@ -9,10 +9,10 @@ int main() {
     Library library;
 
     /*--------- Add books ------*/
-    Book b1("C++ Guide", "Smith", 2023, 1, 1);
+    Book b1("C++ Guide", "Musa", 2023, 1, 1);
     Book b2("Python Basics", "John", 2022, 2, 2);
-    Book b3("Java Fundamentals", "David Brown", 2021, 1, 1);
-    Book b4("OOP", "Davis", 2020, 1, 1);
+    Book b3("Java Fundamentals", "calvin Brown", 2021, 1, 1);
+    Book b4("OOP", "David", 2020, 1, 1);
     library.addBook(b1);
     library.addBook(b2);
     library.addBook(b3);
