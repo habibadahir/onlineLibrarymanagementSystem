@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "Book.h"
 #include "User.h"
 #include "Library.h"
@@ -10,7 +9,7 @@ int main() {
     Library library;
 
     // --- Add books ---
-    Book b1("C++ Guide", "Musa", 2023, 20, 20);
+    Book b1("C++ Guide", "Musa","123-456" 2023, 20, 20);
     library.addBook(b1);
 
     // --- Add users ---
@@ -21,9 +20,11 @@ int main() {
     library.borrowBook(101, "C++ Guide"); 
 
     // ---borrowed books ---
+    int userIndex = library.getUserIndex(101);
     cout << "Zam borrowed: ";
-    for (string book : library.getUserIndex(101) != -1 ? library.getUsers(library.getUserIndex(101)).getBorrowedBooks() : vector<string>{}) {
-        cout << book << ", ";
+    for (string book : library.getUser(userIndex).getBorrowedBooks())
+            cout << book << ", ";
+   
     }
     cout << endl;
 
@@ -33,15 +34,17 @@ int main() {
     // -----borrowed books after the return ---
     cout << "After return:" << endl;
     cout << "Zam borrowed: ";
-    for (string book : library.getUserIndex(101) != -1 ? library.getUsers(library.getUserIndex(101)).getBorrowedBooks() : vector<string>{}) {
-        cout << book << ", ";
+   if (userIndex != -1) {
+        for (string book : library.getUser(userIndex).getBorrowedBooks())
+            cout << book << ", ";
     }
     cout << endl;
   
 
     // --- Search book by title ---
-    int idx = library.searchBookByTitle("C++ Guide");
-    if (idx != -1) cout << "Found book: " << library.getBooks(idx).getTitle() << endl;
+     int bookIndex = library.searchBookByTitle("C++ Guide");
+    if (bookIndex != -1)
+        cout << "Found book: " << library.getBook(bookIndex).getTitle() << endl;
     else cout << "Book not found" << endl;
 
     return 0;
