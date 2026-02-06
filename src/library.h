@@ -1,5 +1,6 @@
 
 #include <string>
+#include <vector>
 #include "Book.h"
 #include "User.h"
 using namespace std;
@@ -21,4 +22,7 @@ public:
 
     void borrowBook(int userId, string bookTitle);
     void returnBook(int userId, string bookTitle);
+
+    User& getUser(int index);
+    Book& getBook(int index);
 };
