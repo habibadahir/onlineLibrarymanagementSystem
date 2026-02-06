@@ -80,3 +80,14 @@ void Library::returnBook(int userId, string bookTitle) {
         users[uIndex].returnBook(bookTitle);
     }
 }
+
+/* --- getters for private members --- */
+
+User& Library::getUser(int index){
+    return users[index];
+}
+
+Book& Library::getBook(int index){
+    return books[index];
+}
+
