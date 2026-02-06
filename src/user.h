@@ -13,7 +13,7 @@ public:
 
     int getId();
     string getName();
-    vector<string> getborrowedBooks();
+    vector<string> getBorrowedBooks();
 
 
     void setName(string n);
