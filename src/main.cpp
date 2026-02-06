@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Book.h"
 #include "User.h"
 #include "Library.h"
