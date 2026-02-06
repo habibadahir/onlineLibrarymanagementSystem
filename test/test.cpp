@@ -33,17 +33,17 @@ int main() {
 
     cout << "Borrowed books after borrowing:" << endl;
     cout << "Zam: ";
-    for (string book : library.getUser[library.getUserIndex(101)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(101)).getBorrowedBooks())
         cout << book << ", ";
     cout << endl;
 
     cout << "Ramla: ";
-    for (string book : library.getUser[library.getUserIndex(102)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(102)).getBorrowedBooks())
         cout << book << ", ";
     cout << endl;
 
     cout << "Ayan: ";
-    for (string book : library.getUser[library.getUserIndex(103)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(103)).getBorrowedBooks())
         cout << book << ", ";
     cout << endl;
 
@@ -53,14 +53,14 @@ int main() {
 
     cout << "After trying to borrow already borrowed books:" << endl;
     cout << "Zam: ";
-    for (string book : library.getUser[library.getUserIndex(101)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(101)).getBorrowedBooks())
         cout << book << ", ";
     cout << endl;
 
     cout << "Ramla: ";
-    for (string book : library.getUser[library.getUserIndex(102)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(102)).getBorrowedBooks())
         cout << book << ", ";
-    cout << "\n";
+    cout << endl;
   
 
     /*------ Positive Test: Return books ------*/
@@ -69,32 +69,32 @@ int main() {
 
     cout << "After returning some books:" << endl;
     cout << "Zam: ";
-    for (string book : library.getUser[library.getUserIndex(101)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(101)).getBorrowedBooks())
         cout << book << ", ";
-    cout << "\n";
+    cout << endl;
 
     cout << "Ramla: ";
-    for (string book : library.getUser[library.getUserIndex(102)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(102)).getBorrowedBooks())
         cout << book << ", ";
-    cout << "\n";
+    cout << endl;
 
     /*--- Negative Test-----*/
     library.returnBook(103, "Python Basics"); 
     cout << "Ayan after returning unborrowed book: ";
-    for (string book : library.getUser[library.getUserIndex(103)].getBorrowedBooks())
+    for (string book : library.getUser(library.getUserIndex(103)).getBorrowedBooks())
         cout << book << ", ";
-    cout << "\n"; 
+    cout << endl; 
   
 
     /* --- Positive Test: Search book exists ---*/
     int idx = library.searchBookByTitle("OOP");
-    if (idx != -1) cout << "Found book: " << library.getBook[idx].getTitle() << "\n";
-    else cout << "Book not found" << "\n";
+    if (idx != -1) cout << "Found book: " << library.getBook[idx].getTitle() << endl;
+    else cout << "Book not found" << endl;
 
     // --- Negative Test
     idx = library.searchBookByTitle("C Guide");
-    if (idx != -1) cout << "Found book: " << library.getBook[idx].getTitle() << "\n";
-    else cout << "Book not found" << "\n";
+    if (idx != -1) cout << "Found book: " << library.getBook[idx].getTitle() << endl;
+    else cout << "Book not found" << endl;
 
     return 0;
 }
